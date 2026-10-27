@@ -27,4 +27,7 @@ Add-FontsToBcContainer -containerName $parameters.ContainerName -path @(
 
 # Add-FontsToBcContainer registers the fonts with AddFontResource, which only affects its own session; the already
 # running service tier sees them after a restart (run 40500289605: fonts copied, install still failed on 'Segoe UI').
-Restart-BcContainerServiceTier -containerName $parameters.ContainerName
+# Restart the whole container, not only the service tier: after Restart-BcContainerServiceTier the next call failed
+# with "The tenant 'default' is not accessible" (run 40508595968); Restart-BcContainer waits until the container is ready.
+Restart-BcContainer -containerName $parameters.ContainerName
+Invoke-ScriptInBcContainer $parameters.ContainerName -scriptblock { $progressPreference = 'SilentlyContinue' }
