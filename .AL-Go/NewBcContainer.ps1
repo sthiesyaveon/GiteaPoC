@@ -24,3 +24,7 @@ Add-FontsToBcContainer -containerName $parameters.ContainerName -path @(
     'C:\Windows\Fonts\webdings*',
     'C:\Windows\Fonts\wingdings*'
 )
+
+# Add-FontsToBcContainer registers the fonts with AddFontResource, which only affects its own session; the already
+# running service tier sees them after a restart (run 40500289605: fonts copied, install still failed on 'Segoe UI').
+Restart-BcContainerServiceTier -containerName $parameters.ContainerName
