@@ -1,0 +1,52 @@
+{
+  "id": "b7e4d2c1-5a39-4f8e-9c06-2d7f1a8e3b54",
+  "name": "Gitea PoC Hello World Test",
+  "publisher": "YAVEON GMBH PoC",
+  "version": "1.0.0.0",
+  "brief": "Tests for the Gitea NuGet proof of concept",
+  "description": "Runs in a BC container whose Yaveon apps were installed from the Gitea NuGet feed.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "3f6c2a8e-9b41-4d7e-a5c2-7e1b9d04f3a6",
+      "name": "Gitea PoC Hello World",
+      "publisher": "YAVEON GMBH PoC",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "c80b3919-290f-4bfd-b0b1-d1690f88d6db",
+      "name": "Yaveon 365 Quality Assurance",
+      "publisher": "YAVEON GMBH",
+      "version": "13.6.0.0"
+    },
+    {
+      "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+      "name": "Library Assert",
+      "publisher": "Microsoft",
+      "version": "28.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "28.0.0.0",
+  "application": "28.0.0.0",
+  "idRanges": [
+    {
+      "from": 50150,
+      "to": 50199
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "17.0",
+  "features": [
+    "NoImplicitWith"
+  ],
+  "target": "Cloud"
+}
